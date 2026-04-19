@@ -1,0 +1,16 @@
+{
+  "log": {"loglevel": "warning"},
+  "inbounds": [{
+    "port": 7860,
+    "protocol": "vless",
+    "settings": {
+      "clients": [{"id": "YOUR-UUID-HERE"}],
+      "decryption": "none"
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {"path": "/vless"}
+    }
+  }],
+  "outbounds": [{"protocol": "freedom"}]
+}
