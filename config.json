@@ -4,7 +4,7 @@
     "port": 7860,
     "protocol": "vless",
     "settings": {
-      "clients": [{"id": "YOUR-UUID-HERE"}],
+      "clients": [{"id": "508009b6-e3e0-4374-aba9-1f76ce19d934"}],
       "decryption": "none"
     },
     "streamSettings": {
