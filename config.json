@@ -8,8 +8,8 @@
       "decryption": "none"
     },
     "streamSettings": {
-      "network": "xhttp",
-      "xhttpSettings": {"path": "/vless"}
+      "network": "ws",
+      "wsSettings": {"path": "/vless"}
     }
   }],
   "outbounds": [{"protocol": "freedom"}]
