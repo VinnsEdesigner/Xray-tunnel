@@ -1,13 +1,11 @@
-FROM ubuntu:22.04
+FROM alpine:latest
 
-RUN apt-get update && apt-get install -y curl unzip && \
-    curl -L -o /tmp/xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
-    unzip /tmp/xray.zip -d /usr/local/bin && \
-    chmod +x /usr/local/bin/xray && \
-    rm /tmp/xray.zip
+# Install xray and curl
+RUN apk add --no-cache ca-certificates bash curl
+RUN bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version latest
 
-COPY config.json /etc/xray/config.json
+WORKDIR /etc/xray
+COPY config.json .
 
-EXPOSE 7860
-
-CMD ["xray", "run", "-c", "/etc/xray/config.json"]
+# Senior Dev move: Swap the hardcoded port 8080 with Railway's dynamic $PORT at runtime
+CMD sed -i "s/8080/$PORT/g" config.json && xray run -c config.json
