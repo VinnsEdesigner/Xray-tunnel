@@ -1,31 +1,23 @@
 {
   "log": {
+    "access": "/dev/stdout",
+    "error": "/dev/stderr",
     "loglevel": "debug"
   },
-  "inbounds": [
-    {
-      "port": 8080, 
-      "protocol": "vless",
-      "settings": {
-        "clients": [
-          {
-            "id": "508009b6-e3e0-4374-aba9-1f76ce19d934"
-          }
-        ],
-        "decryption": "none"
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "xhttpSettings": {
-          "mode": "packet-up",
-          "path": "/api/v1/metrics"
-        }
+  "inbounds": [{
+    "port": 8080,
+    "protocol": "vless",
+    "settings": {
+      "clients": [{"id": "508009b6-e3e0-4374-aba9-1f76ce19d934"}],
+      "decryption": "none"
+    },
+    "streamSettings": {
+      "network": "xhttp",
+      "xhttpSettings": {
+        "mode": "packet-up",
+        "path": "/api/v1/metrics"
       }
     }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
-    }
-  ]
+  }],
+  "outbounds": [{"protocol": "freedom"}]
 }
