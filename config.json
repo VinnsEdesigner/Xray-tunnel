@@ -2,7 +2,7 @@
   "log": {
     "access": "/dev/stdout",
     "error": "/dev/stderr",
-    "loglevel": "debug"
+    "loglevel": "warning"
   },
   "inbounds": [{
     "port": 8080,
@@ -15,7 +15,7 @@
       "network": "xhttp",
       "xhttpSettings": {
         "mode": "packet-up",
-        "path": "/api/v1/metrics"
+        "path": "/v2.12/pages/feed" 
       }
     }
   }],
